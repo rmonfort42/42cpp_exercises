@@ -12,7 +12,7 @@ static std::string promptField(std::string field)
 {
 	std::string input;
 
-	while (true)
+	while (!std::cin.eof())
 	{
 		std::cout << field << ": ";
 		std::getline(std::cin, input);
@@ -20,6 +20,7 @@ static std::string promptField(std::string field)
 			return (input);
 		std::cout << "Field cannot be empty. Try again." << std::endl;
 	}
+	return(input);
 }
 
 void PhoneBook::addContact(void)
