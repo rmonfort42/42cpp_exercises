@@ -5,37 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmonfort <rmonfort@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/06 17:05:00 by rmonfort          #+#    #+#             */
-/*   Updated: 2026/10/06 18:42:03 by rmonfort         ###   ########.fr       */
+/*   Created: 2026/10/06 19:00:00 by rmonfort          #+#    #+#             */
+/*   Updated: 2026/10/06 19:29:14 by rmonfort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
 #include <iostream>
+#include <string>
 
 int main()
 {
-	std::cout << "--- horde of 5 ---" << std::endl;
-	Zombie* horde = zombieHorde(5, "Walker");
-	if (!horde)
-	{
-		std::cout << "zombieHorde returned NULL" << std::endl;
-		return 1;
-	}
-	for (int i = 0; i < 5; i++)
-		horde[i].announce();
-	delete[] horde;
+	std::string str = "HI THIS IS BRAIN";
+	std::string* stringPTR = &str;
+	std::string& stringREF = str;
 
-	std::cout << "--- horde of 1 ---" << std::endl;
-	Zombie* one = zombieHorde(1, "Solo");
-	one[0].announce();
-	delete[] one;
+	std::cout << "Address of str:       " << &str << std::endl;
+	std::cout << "Address of stringPTR: " << stringPTR << std::endl;
+	std::cout << "Address of stringREF: " << &stringREF << std::endl;
 
-	std::cout << "--- N = 0 ---" << std::endl;
-	Zombie* none = zombieHorde(0, "Nobody");
-	if (!none)
-		std::cout << "no zombies allocated, pointer is NULL" << std::endl;
-
-	std::cout << "--- done ---" << std::endl;
+	std::cout << "Value of str:       " << str << std::endl;
+	std::cout << "Value of stringPTR: " << *stringPTR << std::endl;
+	std::cout << "Value of stringREF: " << stringREF << std::endl;
 	return 0;
 }
