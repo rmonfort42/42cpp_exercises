@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmonfort <rmonfort@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/06 16:47:20 by rmonfort          #+#    #+#             */
-/*   Updated: 2026/10/06 16:47:22 by rmonfort         ###   ########.fr       */
+/*   Created: 2026/10/06 16:23:18 by rmonfort          #+#    #+#             */
+/*   Updated: 2026/10/06 16:23:20 by rmonfort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Zombie.hpp"
 #include <iostream>
-#include <string>
-#include <cctype>
 
-int main(int argc, char **argv)
+Zombie::Zombie(std::string name)
 {
-    if (argc == 1)
-    {
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-        return 0;
-    }
-    for (int i = 1; i < argc; i++)
-    {
-        std::string arg = argv[i];
-        for (size_t j = 0; j < arg.length(); j++)
-            std::cout << (char)std::toupper(arg[j]);
-    }
-    std::cout << std::endl;
+    _name = name;
+}
+Zombie::~Zombie()
+{
+    std::cout << _name << " ..." << std::endl;
+}
 
-    return 0;
+void Zombie::announce(void)
+{
+    std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

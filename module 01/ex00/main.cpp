@@ -5,29 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmonfort <rmonfort@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/06 16:47:34 by rmonfort          #+#    #+#             */
-/*   Updated: 2026/10/06 16:47:35 by rmonfort         ###   ########.fr       */
+/*   Created: 2026/10/06 16:22:52 by rmonfort          #+#    #+#             */
+/*   Updated: 2026/10/06 16:34:37 by rmonfort         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "Zombie.hpp"
 
-int main(void)
+int main()
 {
-	PhoneBook	phonebook;
-	std::string	command;
+	Zombie *z = newZombie("Foo");
+	z->announce();
+	delete z;
 
-	while (!std::cin.eof())
-	{
-		std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
-		if (!std::getline(std::cin, command))
-			break;
-		if (command == "ADD")
-			phonebook.addContact();
-		else if (command == "SEARCH")
-			phonebook.searchContacts();
-		else if (command == "EXIT")
-			break;
-	}
+	randomChump("Fooo");
 	return 0;
 }
