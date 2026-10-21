@@ -12,11 +12,10 @@ public:
 	void announce(void);
 	void setName(std::string name);
 	std::string getName(void) const;
+	static Zombie* zombieHorde(int N, std::string name);
 
 private:
 	std::string _name;
 };
-
-Zombie* zombieHorde(int N, std::string name);
 
 #endif

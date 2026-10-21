@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmonfort <rmonfort@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/21 16:42:31 by rmonfort          #+#    #+#             */
+/*   Updated: 2026/10/21 16:42:31 by rmonfort         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef HARL_HPP
 # define HARL_HPP
 
@@ -13,7 +25,7 @@ private:
 public:
 	Harl(void);
 	~Harl(void);
-	
+
 	void complain(const std::string& level) const;
 };
 

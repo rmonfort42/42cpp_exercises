@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmonfort <rmonfort@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/21 16:42:40 by rmonfort          #+#    #+#             */
+/*   Updated: 2026/10/21 16:42:40 by rmonfort         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Harl.hpp"
 #include <iostream>
 
@@ -38,14 +50,14 @@ void Harl::complain(const std::string& level) const {
 		&Harl::warning,
 		&Harl::error
 	};
-	
+
 	const std::string levels[] = {
 		"DEBUG",
 		"INFO",
 		"WARNING",
 		"ERROR"
 	};
-	
+
 	for (int i = 0; i < 4; i++) {
 		if (levels[i] == level) {
 			(this->*functions[i])();

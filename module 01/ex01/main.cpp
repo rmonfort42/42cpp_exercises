@@ -16,7 +16,7 @@
 int main()
 {
 	std::cout << "--- horde of 5 ---" << std::endl;
-	Zombie* horde = zombieHorde(5, "Walker");
+	Zombie* horde = Zombie::zombieHorde(5, "Walker");
 	if (!horde)
 	{
 		std::cout << "zombieHorde returned NULL" << std::endl;
@@ -27,12 +27,12 @@ int main()
 	delete[] horde;
 
 	std::cout << "--- horde of 1 ---" << std::endl;
-	Zombie* one = zombieHorde(1, "Solo");
+	Zombie* one = Zombie::zombieHorde(1, "Solo");
 	one[0].announce();
 	delete[] one;
 
 	std::cout << "--- N = 0 ---" << std::endl;
-	Zombie* none = zombieHorde(0, "Nobody");
+	Zombie* none = Zombie::zombieHorde(0, "Nobody");
 	if (!none)
 		std::cout << "no zombies allocated, pointer is NULL" << std::endl;
 

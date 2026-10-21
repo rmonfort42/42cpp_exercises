@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmonfort <rmonfort@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/21 16:43:14 by rmonfort          #+#    #+#             */
+/*   Updated: 2026/10/21 16:43:14 by rmonfort         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Harl.hpp"
 #include <iostream>
 
 int getLevelIndex(const std::string& level) {
 	const std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	
+
 	for (int i = 0; i < 4; i++) {
 		if (levels[i] == level)
 			return i;
@@ -16,11 +28,11 @@ int main(int argc, char **argv) {
 		std::cerr << "Usage: " << argv[0] << " <level>" << std::endl;
 		return 1;
 	}
-	
+
 	Harl harl;
 	std::string level = argv[1];
 	int levelIndex = getLevelIndex(level);
-	
+
 	switch (levelIndex) {
 		case 0:
 			harl.complain("DEBUG");
@@ -37,6 +49,6 @@ int main(int argc, char **argv) {
 		default:
 			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
-	
+
 	return 0;
 }
